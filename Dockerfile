@@ -30,7 +30,7 @@ RUN Rscript -e "BiocManager::install(c('bumphunter', 'missMethyl', 'rexposome'),
 RUN Rscript -e "remotes::install_github('isglobal-brge/dsExposome', ref = '$DSEXPOSOME_VERSION', repos = c('https://cloud.r-project.org', 'https://cran.datashield.org'), dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 
 # dsOmics
-RUN Rscript -e "BiocManager::install(c('Biobase', 'SNPRelate', 'GENESIS', 'GWASTools', 'GenomicRanges', 'SummarizedExperiment', 'DESeq2', 'edgeR'), update = FALSE, ask = FALSE, dependencies = TRUE, update = FALSE, lib = '$ROCK_LIB')"
+RUN Rscript -e "BiocManager::install(c('Biobase', 'SNPRelate', 'GENESIS', 'GWASTools', 'GenomicRanges', 'SummarizedExperiment', 'DESeq2', 'edgeR'), update = FALSE, ask = FALSE, dependencies = TRUE, lib = '$ROCK_LIB')"
 RUN Rscript -e "remotes::install_github('isglobal-brge/MEAL', ref = '$MEAL_VERSION', dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 RUN Rscript -e "remotes::install_github('isglobal-brge/dsOmics', ref = '$DSOMICS_VERSION', dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 
