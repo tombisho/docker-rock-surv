@@ -26,7 +26,7 @@ RUN Rscript -e "remotes::install_version('rgdal', version = '1.5-12', repos = 'h
 RUN Rscript -e "remotes::install_github('tombisho/dsGeo', ref = '$DSGEO_VERSION', dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 
 # dsExposome
-RUN Rscript -e "BiocManager::install(c('bumphunter', 'missMethyl', 'rexposome'), update = FALSE, ask = FALSE, dependencies = TRUE, update = FALSE, lib = '$ROCK_LIB')"
+RUN Rscript -e "BiocManager::install(c('bumphunter', 'missMethyl', 'rexposome'), update = FALSE, ask = FALSE, dependencies = TRUE, lib = '$ROCK_LIB')"
 RUN Rscript -e "remotes::install_github('isglobal-brge/dsExposome', ref = '$DSEXPOSOME_VERSION', repos = c('https://cloud.r-project.org', 'https://cran.datashield.org'), dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 
 # dsOmics
