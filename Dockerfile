@@ -4,7 +4,7 @@
 # https://github.com/obiba/docker-rock-demo
 #
 
-FROM datashild/rock-base:latest
+FROM datashield/rock-base:latest
 
 ENV DSGEO_VERSION master
 ENV DSEXPOSOME_VERSION master
