@@ -10,6 +10,7 @@ ENV DSGEO_VERSION master
 ENV DSEXPOSOME_VERSION master
 ENV MEAL_VERSION master
 ENV DSOMICS_VERSION master
+ENV DSURVIVAL_VERSION v1.0.0
 
 ENV ROCK_LIB /var/lib/rock/R/library
 
@@ -33,5 +34,8 @@ RUN Rscript -e "remotes::install_github('isglobal-brge/dsExposome', ref = '$DSEX
 RUN Rscript -e "BiocManager::install(c('Biobase', 'SNPRelate', 'GENESIS', 'GWASTools', 'GenomicRanges', 'SummarizedExperiment', 'DESeq2', 'edgeR'), update = FALSE, ask = FALSE, dependencies = TRUE, lib = '$ROCK_LIB')"
 RUN Rscript -e "remotes::install_github('isglobal-brge/MEAL', ref = '$MEAL_VERSION', dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 RUN Rscript -e "remotes::install_github('isglobal-brge/dsOmics', ref = '$DSOMICS_VERSION', dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
+
+# dsSurvival
+RUN Rscript -e "remotes::install_github('neelsoumya/dsSurvival', ref = '$DSURVIVAL_VERSION', dependencies = TRUE, upgrade = FALSE, lib = '$ROCK_LIB')"
 
 RUN chown -R rock $ROCK_LIB
